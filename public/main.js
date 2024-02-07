@@ -2,7 +2,7 @@
 let divSelectRoom = document.getElementById("selectRoom")
 let divconsultingRoom = document.getElementById("consultingRoom")
 let inputRoomNumber = document.getElementById("roomNumber")
-let btnGoRoom = document.getElementById("goroom")
+let btnGoRoom = document.getElementById("goRoom")
 let localVideo = document.getElementById("localVideo")
 let remoteVideo = document.getElementById("remoteVideo")
 
@@ -23,9 +23,10 @@ const streamConstraints = {
     video: true
 }
 // when button is clicked
-btnGoRoom.addEventListener.onclick = () => {
-    if (inputRoomNumber.value == '') {
-        alert("Room id invalid")
+btnGoRoom.onclick = () => {
+    console.log("pressed")
+    if (inputRoomNumber.value === '' || null) {
+        console.log("Room id invalid")
     } else {
         navigator.mediaDevices.getUserMedia(streamConstraints)
             .then(stream => {
@@ -35,7 +36,7 @@ btnGoRoom.addEventListener.onclick = () => {
             .catch(err => {
                 console.log("an error occured", err)
             })
-        div.divSelectRoom.style = "display: none"
+        divSelectRoom.style = "display: none"
         divconsultingRoom.style = 'display: block'
     }
 }
