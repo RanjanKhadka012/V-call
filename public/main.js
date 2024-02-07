@@ -22,3 +22,20 @@ const streamConstraints = {
     audio: true,
     video: true
 }
+// when button is clicked
+btnGoRoom.addEventListener.onclick = () => {
+    if (inputRoomNumber.value == '') {
+        alert("Room id invalid")
+    } else {
+        navigator.mediaDevices.getUserMedia(streamConstraints)
+            .then(stream => {
+                localStream = stream,
+                    localvideo.srcObject = stream
+            })
+            .catch(err => {
+                console.log("an error occured", err)
+            })
+        div.divSelectRoom.style = "display: none"
+        divconsultingRoom.style = 'display: block'
+    }
+}
