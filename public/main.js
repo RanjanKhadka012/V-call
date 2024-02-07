@@ -31,7 +31,7 @@ btnGoRoom.onclick = () => {
         navigator.mediaDevices.getUserMedia(streamConstraints)
             .then(stream => {
                 localStream = stream,
-                    localvideo.srcObject = stream
+                localVideo.srcObject = stream
             })
             .catch(err => {
                 console.log("an error occured", err)
