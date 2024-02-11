@@ -1,0 +1,19 @@
+#navbar{
+    background-color: #32b9b0cd;
+}
+
+#goRoom{
+    border-radius: 10px;
+    color: black;
+    background-color: beige;
+}
+
+#localVideo{
+    background-color: black;
+    height: 30rem;
+    width: 50rem;
+    margin: 5em 10em;
+    box-shadow: 2em 2em 15px #2a292c40;
+    border-radius: 20px;
+  
+}

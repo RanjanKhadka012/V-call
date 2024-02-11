@@ -39,4 +39,7 @@ btnGoRoom.onclick = () => {
         divSelectRoom.style = "display: none"
         divconsultingRoom.style = 'display: block'
     }
+
+    // Controls for mike
+    addEventListener.getElementById()
 }
