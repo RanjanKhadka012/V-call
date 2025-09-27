@@ -1,19 +1,213 @@
-#navbar{
+/* General Styles */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+}
+
+#navbar {
     background-color: #32b9b0cd;
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-#goRoom{
-    border-radius: 10px;
-    color: black;
-    background-color: beige;
+/* Room Selection Styles */
+#selectRoom {
+    text-align: center;
+    padding: 2rem;
+    margin: 4rem auto;
+    max-width: 500px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
 }
 
-#localVideo{
-    background-color: black;
-    height: 30rem;
-    width: 50rem;
-    margin: 5em 10em;
-    box-shadow: 2em 2em 15px #2a292c40;
-    border-radius: 20px;
-  
+#selectRoom label {
+    display: block;
+    color: white;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+#roomNumber {
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    margin-bottom: 1.5rem;
+    background: rgba(255, 255, 255, 0.9);
+    outline: none;
+}
+
+#goRoom {
+    background: #32b9b0;
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+#goRoom:hover {
+    background: #2a9d96;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(50, 185, 176, 0.3);
+}
+
+/* Video Container */
+.video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+    padding: 2rem;
+    flex-wrap: wrap;
+}
+
+#localVideo, #remoteVideo {
+    background-color: #1a1a1a;
+    width: 400px;
+    height: 300px;
+    border-radius: 15px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    object-fit: cover;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+}
+
+#localVideo {
+    transform: scaleX(-1); /* Mirror effect for local video */
+}
+
+#remoteVideo {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+/* Controls */
+.controls {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem;
+}
+
+.control-btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    color: white;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(10px);
+}
+
+.control-btn:hover {
+    background: rgba(255, 255, 255, 0.2);
+    transform: scale(1.1);
+}
+
+.control-btn:active {
+    transform: scale(0.95);
+}
+
+/* Status Bar */
+.status-bar {
+    background: rgba(0, 0, 0, 0.8);
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+}
+
+/* Video Wrapper */
+.video-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.video-label {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+}
+
+/* Leave button styling */
+.leave-btn {
+    background: rgba(255, 68, 68, 0.2) !important;
+    border-color: #ff4444 !important;
+}
+
+.leave-btn:hover {
+    background: rgba(255, 68, 68, 0.4) !important;
+}
+
+/* Connection states */
+.connected {
+    color: #4CAF50 !important;
+}
+
+.connecting {
+    color: #FF9800 !important;
+}
+
+.disconnected {
+    color: #F44336 !important;
+}
+
+/* Animation for waiting state */
+@keyframes pulse {
+    0% { opacity: 1; }
+    50% { opacity: 0.5; }
+    100% { opacity: 1; }
+}
+
+.waiting {
+    animation: pulse 2s infinite;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .video-container {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    #localVideo, #remoteVideo {
+        width: 300px;
+        height: 225px;
+    }
+    
+    #selectRoom {
+        margin: 2rem 1rem;
+        padding: 1.5rem;
+    }
+    
+    .controls {
+        gap: 0.5rem;
+    }
+    
+    .control-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
 }
